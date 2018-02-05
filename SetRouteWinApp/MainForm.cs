@@ -43,12 +43,32 @@ namespace SetRouteWinApp
                     num++;
                 }                    
             }
+
+
+            // 以方法把所有DNS server列出
+            DNSServerShowlistBox.Items.Clear();
+
+            NetworkInterface[] networkInterfaces = NetworkInterface.GetAllNetworkInterfaces();
+
+            foreach (NetworkInterface networkInterface in networkInterfaces)
+            {
+                if (networkInterface.OperationalStatus == OperationalStatus.Up)
+                {
+                    IPInterfaceProperties ipProperties = networkInterface.GetIPProperties();
+                    IPAddressCollection dnsAddresses = ipProperties.DnsAddresses;
+
+                    foreach (IPAddress dnsAdress in dnsAddresses)
+                    {
+                        DNSServerShowlistBox.Items.Add(dnsAdress);
+
+                    }
+                }
+            }
         }
 
         private void On_Click(object sender, EventArgs e)
         {
-            // 未測試完成能把所有DNS server列出
-            MessageBox.Show(GetDnsAdress().ToString());
+            
         }
 
         private void SetDNS_Click(object sender, EventArgs e)
@@ -87,25 +107,25 @@ namespace SetRouteWinApp
 
         }
 
-        private static IPAddress GetDnsAdress()
-        {
-            NetworkInterface[] networkInterfaces = NetworkInterface.GetAllNetworkInterfaces();
+        //private static IPAddress GetDnsAdress()
+        //{
+        //    NetworkInterface[] networkInterfaces = NetworkInterface.GetAllNetworkInterfaces();
 
-            foreach (NetworkInterface networkInterface in networkInterfaces)
-            {
-                if (networkInterface.OperationalStatus == OperationalStatus.Up)
-                {
-                    IPInterfaceProperties ipProperties = networkInterface.GetIPProperties();
-                    IPAddressCollection dnsAddresses = ipProperties.DnsAddresses;
+        //    foreach (NetworkInterface networkInterface in networkInterfaces)
+        //    {
+        //        if (networkInterface.OperationalStatus == OperationalStatus.Up)
+        //        {
+        //            IPInterfaceProperties ipProperties = networkInterface.GetIPProperties();
+        //            IPAddressCollection dnsAddresses = ipProperties.DnsAddresses;
 
-                    foreach (IPAddress dnsAdress in dnsAddresses)
-                    {
-                        return dnsAdress;
-                    }
-                }
-            }
+        //            foreach (IPAddress dnsAdress in dnsAddresses)
+        //            {
+        //                return dnsAdress;
+        //            }
+        //        }
+        //    }
 
-            throw new InvalidOperationException("Unable to find DNS Address");
-        }
+        //    throw new InvalidOperationException("Unable to find DNS Address");
+        //}
     }
 }

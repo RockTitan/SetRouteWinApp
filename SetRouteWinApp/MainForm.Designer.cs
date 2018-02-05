@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.SetDNS = new System.Windows.Forms.Button();
@@ -41,6 +42,8 @@
             this.HostNameTitleLabel = new System.Windows.Forms.Label();
             this.HostNameSHowlabel = new System.Windows.Forms.Label();
             this.IPv4ShowlistBox = new System.Windows.Forms.ListBox();
+            this.DNSTitleLabel = new System.Windows.Forms.Label();
+            this.DNSServerShowlistBox = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -124,7 +127,7 @@
             // 
             // Close
             // 
-            this.Close.Location = new System.Drawing.Point(504, 370);
+            this.Close.Location = new System.Drawing.Point(425, 467);
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(100, 30);
             this.Close.TabIndex = 1;
@@ -180,15 +183,39 @@
             this.IPv4ShowlistBox.Location = new System.Drawing.Point(16, 172);
             this.IPv4ShowlistBox.Name = "IPv4ShowlistBox";
             this.IPv4ShowlistBox.ScrollAlwaysVisible = true;
-            this.IPv4ShowlistBox.Size = new System.Drawing.Size(219, 60);
+            this.IPv4ShowlistBox.Size = new System.Drawing.Size(214, 74);
             this.IPv4ShowlistBox.TabIndex = 7;
             this.IPv4ShowlistBox.SelectedIndexChanged += new System.EventHandler(this.IPv4ShowlistBox_SelectedIndexChanged);
+            // 
+            // DNSTitleLabel
+            // 
+            this.DNSTitleLabel.AutoSize = true;
+            this.DNSTitleLabel.Location = new System.Drawing.Point(13, 259);
+            this.DNSTitleLabel.Name = "DNSTitleLabel";
+            this.DNSTitleLabel.Size = new System.Drawing.Size(91, 14);
+            this.DNSTitleLabel.TabIndex = 8;
+            this.DNSTitleLabel.Text = "DNS Server :";
+            // 
+            // DNSServerShowlistBox
+            // 
+            this.DNSServerShowlistBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DNSServerShowlistBox.FormattingEnabled = true;
+            this.DNSServerShowlistBox.ItemHeight = 14;
+            this.DNSServerShowlistBox.Location = new System.Drawing.Point(16, 278);
+            this.DNSServerShowlistBox.Name = "DNSServerShowlistBox";
+            this.DNSServerShowlistBox.ScrollAlwaysVisible = true;
+            this.DNSServerShowlistBox.Size = new System.Drawing.Size(214, 214);
+            this.DNSServerShowlistBox.TabIndex = 9;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 412);
+            this.ClientSize = new System.Drawing.Size(537, 509);
+            this.Controls.Add(this.DNSServerShowlistBox);
+            this.Controls.Add(this.DNSTitleLabel);
             this.Controls.Add(this.IPv4ShowlistBox);
             this.Controls.Add(this.HostNameSHowlabel);
             this.Controls.Add(this.HostNameTitleLabel);
@@ -197,8 +224,9 @@
             this.Controls.Add(this.Close);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.Text = "SetRouteWinApp";
+            this.Text = "SetRouteWinApp V1.0.20180205";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -223,6 +251,8 @@
         private System.Windows.Forms.Label HostNameTitleLabel;
         private System.Windows.Forms.Label HostNameSHowlabel;
         private System.Windows.Forms.ListBox IPv4ShowlistBox;
+        private System.Windows.Forms.Label DNSTitleLabel;
+        private System.Windows.Forms.ListBox DNSServerShowlistBox;
     }
 }
 
