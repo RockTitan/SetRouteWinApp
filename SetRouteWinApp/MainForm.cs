@@ -21,48 +21,28 @@ namespace SetRouteWinApp
             InitializeComponent();
         }
 
+        public static List<string> GetIPAdress;
+        public static List<IPAddress> GetDnsAdress;
+
         private void MainForm_Load(object sender, EventArgs e)
         {
-            // 取得本機名稱
-            string strHostName = Dns.GetHostName();
-            // 取得本機的IpHostEntry類別實體，用這個會提示已過時
-            //IPHostEntry iphostentry = Dns.GetHostByName(strHostName);
-
-            // 取得本機的IpHostEntry類別實體，MSDN建議新的用法
-            IPHostEntry iphostentry = Dns.GetHostEntry(strHostName);
-            HostNameSHowlabel.Text = Dns.GetHostName();
-
-            // 取得所有 IP 位址
+            // 把所有IP列出
+            GetIPAdress = GetNetworkInfo.GetIPAdress();
             int num = 1;
-            foreach (IPAddress ipaddress in iphostentry.AddressList)
+            foreach (var ip in GetIPAdress)
             {
-                if (ipaddress.AddressFamily == AddressFamily.InterNetwork)
-                {
-                    //IPv4ShowLabel.Text = "IP #" + num + ": " + ipaddress.ToString(); //label無法顯示陣列?
-                    IPv4ShowlistBox.Items.Add("IP #" + num + ": " + ipaddress.ToString());
-                    num++;
-                }                    
+                IPv4ShowlistBox.Items.Add("IP #" + num +": " + ip);
+                num++;
             }
 
 
-            // 以方法把所有DNS server列出
+            // 把所有DNS server列出
             DNSServerShowlistBox.Items.Clear();
-
-            NetworkInterface[] networkInterfaces = NetworkInterface.GetAllNetworkInterfaces();
-
-            foreach (NetworkInterface networkInterface in networkInterfaces)
+            //DNSServerShowlistBox.Items.AddRange(GetNetworkInfo.GetDnsAdress());
+            GetDnsAdress = GetNetworkInfo.GetDnsAdress();
+            foreach (var dns in GetDnsAdress)
             {
-                if (networkInterface.OperationalStatus == OperationalStatus.Up)
-                {
-                    IPInterfaceProperties ipProperties = networkInterface.GetIPProperties();
-                    IPAddressCollection dnsAddresses = ipProperties.DnsAddresses;
-
-                    foreach (IPAddress dnsAdress in dnsAddresses)
-                    {
-                        DNSServerShowlistBox.Items.Add(dnsAdress);
-
-                    }
-                }
+                DNSServerShowlistBox.Items.Add(dns);
             }
         }
 
@@ -106,26 +86,5 @@ namespace SetRouteWinApp
         {
 
         }
-
-        //private static IPAddress GetDnsAdress()
-        //{
-        //    NetworkInterface[] networkInterfaces = NetworkInterface.GetAllNetworkInterfaces();
-
-        //    foreach (NetworkInterface networkInterface in networkInterfaces)
-        //    {
-        //        if (networkInterface.OperationalStatus == OperationalStatus.Up)
-        //        {
-        //            IPInterfaceProperties ipProperties = networkInterface.GetIPProperties();
-        //            IPAddressCollection dnsAddresses = ipProperties.DnsAddresses;
-
-        //            foreach (IPAddress dnsAdress in dnsAddresses)
-        //            {
-        //                return dnsAdress;
-        //            }
-        //        }
-        //    }
-
-        //    throw new InvalidOperationException("Unable to find DNS Address");
-        //}
     }
 }
