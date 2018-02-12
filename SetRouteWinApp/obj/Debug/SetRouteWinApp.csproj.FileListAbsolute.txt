@@ -8,3 +8,13 @@ C:\Users\RockTitan\Desktop\C# Practice\Windows Form\SetRouteWinApp\SetRouteWinAp
 C:\Users\RockTitan\Desktop\C# Practice\Windows Form\SetRouteWinApp\SetRouteWinApp\obj\Debug\SetRouteWinApp.csproj.CoreCompileInputs.cache
 C:\Users\RockTitan\Desktop\C# Practice\Windows Form\SetRouteWinApp\SetRouteWinApp\obj\Debug\SetRouteWinApp.exe
 C:\Users\RockTitan\Desktop\C# Practice\Windows Form\SetRouteWinApp\SetRouteWinApp\obj\Debug\SetRouteWinApp.pdb
+E:\Personal-CTCI\C# practice\Windows Form\SetRouteWinApp\SetRouteWinApp\bin\Debug\SetRouteWinApp.exe.config
+E:\Personal-CTCI\C# practice\Windows Form\SetRouteWinApp\SetRouteWinApp\bin\Debug\SetRouteWinApp.exe
+E:\Personal-CTCI\C# practice\Windows Form\SetRouteWinApp\SetRouteWinApp\bin\Debug\SetRouteWinApp.pdb
+E:\Personal-CTCI\C# practice\Windows Form\SetRouteWinApp\SetRouteWinApp\obj\Debug\SetRouteWinApp.csprojResolveAssemblyReference.cache
+E:\Personal-CTCI\C# practice\Windows Form\SetRouteWinApp\SetRouteWinApp\obj\Debug\SetRouteWinApp.MainForm.resources
+E:\Personal-CTCI\C# practice\Windows Form\SetRouteWinApp\SetRouteWinApp\obj\Debug\SetRouteWinApp.Properties.Resources.resources
+E:\Personal-CTCI\C# practice\Windows Form\SetRouteWinApp\SetRouteWinApp\obj\Debug\SetRouteWinApp.csproj.GenerateResource.Cache
+E:\Personal-CTCI\C# practice\Windows Form\SetRouteWinApp\SetRouteWinApp\obj\Debug\SetRouteWinApp.csproj.CoreCompileInputs.cache
+E:\Personal-CTCI\C# practice\Windows Form\SetRouteWinApp\SetRouteWinApp\obj\Debug\SetRouteWinApp.exe
+E:\Personal-CTCI\C# practice\Windows Form\SetRouteWinApp\SetRouteWinApp\obj\Debug\SetRouteWinApp.pdb

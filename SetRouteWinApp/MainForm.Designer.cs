@@ -206,6 +206,7 @@
             this.DNSServerShowlistBox.Location = new System.Drawing.Point(16, 278);
             this.DNSServerShowlistBox.Name = "DNSServerShowlistBox";
             this.DNSServerShowlistBox.ScrollAlwaysVisible = true;
+            this.DNSServerShowlistBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.DNSServerShowlistBox.Size = new System.Drawing.Size(214, 214);
             this.DNSServerShowlistBox.TabIndex = 9;
             // 
@@ -226,7 +227,7 @@
             this.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.Text = "SetRouteWinApp V1.0.20180205";
+            this.Text = "SetRouteWinApp V1.0.20180208";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
